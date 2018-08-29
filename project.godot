@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="NiceTofu Template Project"
+config/name="Godot Template Project"
 config/icon="res://icon.png"
 
 [display]
