@@ -12,6 +12,8 @@ config_version=3
 
 config/name="Godot Template Project"
 run/main_scene="res://scenes/splash/Splash.tscn"
+boot_splash/image="res://icon.png"
+boot_splash/fullsize=false
 config/icon="res://icon.png"
 
 [autoload]
@@ -19,6 +21,7 @@ config/icon="res://icon.png"
 GameVars="*res://scenes/GameVars.gd"
 SoundManager="*res://scenes/SoundManager.tscn"
 StageManager="*res://scenes/StageManager.tscn"
+Game="*res://scenes/Game.tscn"
 
 [display]
 
