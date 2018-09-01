@@ -36,7 +36,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Splash" type="Node2D" index="0"]
+[node name="Splash" type="Node2D"]
 
 script = ExtResource( 1 )
 
