@@ -35,7 +35,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 247, -285 ), Vector2( 247, 290 ), Vector2( 247, 172 ) ]
+"values": [ Vector2( 247, -444 ), Vector2( 247, 290 ), Vector2( 247, 116 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -65,10 +65,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 247, 172 ), Vector2( 247, 292 ), Vector2( 247, -286 ) ]
+"values": [ Vector2( 247, 116 ), Vector2( 247, 292 ), Vector2( 247, -417 ) ]
 }
 
-[node name="About" type="Control" index="0"]
+[node name="About" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -288,6 +288,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Theme" ]
+
+[connection signal="button_up" from="PopUpFrame/VBoxContainer/BtnInformasi" to="." method="_on_BtnInformasi_button_up"]
 
 [connection signal="button_up" from="PopUpFrame/VBoxContainer/BtnClose" to="." method="_on_BtnClose_button_up"]
 

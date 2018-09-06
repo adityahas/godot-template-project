@@ -16,12 +16,12 @@ func _ready():
 
 
 func _on_BtnAbout_button_up():
-	var scene = load(GameVars.STAGE_ABOUT)
+	var scene = load(GameVars.PREFABS_ABOUT)
 	var node = scene.instance()
 	get_tree().get_current_scene().add_child(node)
 
 
 func _on_BtnSetting_button_up():
-	var scene = load(GameVars.STAGE_ABOUT)
+	var scene = load(GameVars.PREFABS_SETTING)
 	var node = scene.instance()
 	get_tree().get_current_scene().add_child(node)

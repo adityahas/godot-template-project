@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scenes/setting/Setting.gd" type="Script" id=1]
+[ext_resource path="res://scenes/informasi/Informasi.gd" type="Script" id=1]
 [ext_resource path="res://scenes/PopUpFrame2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/popup2_frame_9patch.png" type="Texture" id=3]
-[ext_resource path="res://assets/sm_btn_theme_2.tres" type="Theme" id=4]
-[ext_resource path="res://assets/sm_theme.tres" type="Theme" id=5]
-[ext_resource path="res://assets/popup_banner.png" type="Texture" id=6]
-[ext_resource path="res://assets/sm_font_big.tres" type="Theme" id=7]
+[ext_resource path="res://assets/sm_theme.tres" type="Theme" id=4]
+[ext_resource path="res://assets/popup_banner.png" type="Texture" id=5]
+[ext_resource path="res://assets/sm_font_big.tres" type="Theme" id=6]
+[ext_resource path="res://assets/sm_font_dark_grey.tres" type="Theme" id=7]
 
 [sub_resource type="Animation" id=1]
 
@@ -69,14 +69,16 @@ tracks/1/keys = {
 "values": [ Vector2( 247, 116 ), Vector2( 247, 292 ), Vector2( 247, -417 ) ]
 }
 
-[node name="Setting" type="Control"]
+[node name="Informasi" type="Control" index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
 rect_min_size = Vector2( 1024, 600 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -123,9 +125,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -265.0
-margin_top = -585.0
+margin_top = -744.0
 margin_right = 264.0
-margin_bottom = -306.0
+margin_bottom = -376.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -139,33 +141,16 @@ patch_margin_right = 30
 patch_margin_bottom = 30
 _sections_unfolded = [ "Patch Margin", "Rect" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PopUpFrame" index="0"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -125.5
-margin_top = -44.5
-margin_right = 126.5
-margin_bottom = 71.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
-
-[node name="BtnMusic" type="Button" parent="PopUpFrame/VBoxContainer" index="0"]
+[node name="BtnBack" type="Button" parent="PopUpFrame" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 252.0
-margin_bottom = 36.0
+margin_left = 139.0
+margin_top = 344.0
+margin_right = 391.0
+margin_bottom = 380.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -174,84 +159,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 4 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Music : On"
-flat = false
-align = 1
-_sections_unfolded = [ "Theme" ]
-
-[node name="BtnSFX" type="Button" parent="PopUpFrame/VBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 40.0
-margin_right = 252.0
-margin_bottom = 76.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 4 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "SFX : On"
-flat = false
-align = 1
-_sections_unfolded = [ "Theme" ]
-
-[node name="BtnTutorial" type="Button" parent="PopUpFrame/VBoxContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 80.0
-margin_right = 252.0
-margin_bottom = 116.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 4 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Cara Bermain"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "Theme" ]
-
-[node name="BtnClose" type="Button" parent="PopUpFrame/VBoxContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 120.0
-margin_right = 252.0
-margin_bottom = 156.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 5 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -259,7 +166,7 @@ group = null
 text = "Tutup"
 flat = false
 align = 1
-_sections_unfolded = [ "Theme" ]
+_sections_unfolded = [ "Material", "Theme", "Visibility", "custom_colors" ]
 
 [node name="BgTitle" type="TextureRect" parent="PopUpFrame" index="1"]
 
@@ -268,16 +175,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -321.5
-margin_top = -112.5
+margin_top = -166.0
 margin_right = 320.5
-margin_bottom = -60.5
+margin_bottom = -114.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
@@ -289,22 +196,110 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -63.0
-margin_top = -12.5
+margin_top = -13.0
 margin_right = 63.0
-margin_bottom = 12.5
+margin_bottom = 12.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 7 )
-text = "Setting"
+theme = ExtResource( 6 )
+text = "Informasi"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Theme" ]
 
-[connection signal="button_up" from="PopUpFrame/VBoxContainer/BtnClose" to="." method="_on_BtnClose_button_up"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PopUpFrame" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 34.0
+margin_top = 87.0
+margin_right = 488.0
+margin_bottom = 329.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 7 )
+bbcode_enabled = false
+bbcode_text = "A. Game Shiratal Mustaqim adalah game yang mengilustrasikan perjalanan manusia di kehidupan dunia,apa yang harus dilakukan dan kehidupan akhirat sebagai bentuk pertanggungjawaban.
+
+B. Untuk mengawali game shiratal mustaqim anak didik harus menyelesaikan dua kalimat syahadat.
+
+C. Pahala Wajib yang digunakan peneliti antara lain :
+- Sholat 5 waktu (Dhuhur, Asar, Maqrib, Isya’ dan Subuh)
+- Puasa Ramadhan
+- Zakat fitrah
+- Haji (bagi yang mampu)
+
+D. Pahala Sunnah yang digunakan diantaranya :
+- Shodakoh
+- Tolong menolong
+- Membaca Alquran
+
+E. Dosa yang ditampilkan dalam permainan :
+- Syirik (dosa besar) : menghanguskan pahala / point yang didapat
+- Sombong : mengurangi pahala dalam jumlah yang besar
+- Lalai & kemalasan : mengurangi pahala dalam jumlah kecil
+
+F. KriteriaKeberhasilan,peneliti mengelompokkan menjadi beberapa kelompok :
+1. User melewati shirat secepat kilat (point 1.300)
+2. User melewati shirat dengan berlari (point 1.000)
+3. User melewati shirat dengan berjalan (point > 800 )
+4. User melewati shirat dengan merangkak (point 700)
+5. User melewati shirat dengan bergelantungan (point 600)
+
+G. Kriteria kegagalan, jika user mendapatkan point kurang dari 600 point
+
+H. User atau anak didik dalam permainan ini jika bersinggungan dengan dosa maka akan muncul ayat Alquran yang mendasarinya baik audionya( ayatnya) mapun visualnya (terjemahan)"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "A. Game Shiratal Mustaqim adalah game yang mengilustrasikan perjalanan manusia di kehidupan dunia,apa yang harus dilakukan dan kehidupan akhirat sebagai bentuk pertanggungjawaban.
+
+B. Untuk mengawali game shiratal mustaqim anak didik harus menyelesaikan dua kalimat syahadat.
+
+C. Pahala Wajib yang digunakan peneliti antara lain :
+- Sholat 5 waktu (Dhuhur, Asar, Maqrib, Isya’ dan Subuh)
+- Puasa Ramadhan
+- Zakat fitrah
+- Haji (bagi yang mampu)
+
+D. Pahala Sunnah yang digunakan diantaranya :
+- Shodakoh
+- Tolong menolong
+- Membaca Alquran
+
+E. Dosa yang ditampilkan dalam permainan :
+- Syirik (dosa besar) : menghanguskan pahala / point yang didapat
+- Sombong : mengurangi pahala dalam jumlah yang besar
+- Lalai & kemalasan : mengurangi pahala dalam jumlah kecil
+
+F. KriteriaKeberhasilan,peneliti mengelompokkan menjadi beberapa kelompok :
+1. User melewati shirat secepat kilat (point 1.300)
+2. User melewati shirat dengan berlari (point 1.000)
+3. User melewati shirat dengan berjalan (point > 800 )
+4. User melewati shirat dengan merangkak (point 700)
+5. User melewati shirat dengan bergelantungan (point 600)
+
+G. Kriteria kegagalan, jika user mendapatkan point kurang dari 600 point
+
+H. User atau anak didik dalam permainan ini jika bersinggungan dengan dosa maka akan muncul ayat Alquran yang mendasarinya baik audionya( ayatnya) mapun visualnya (terjemahan)"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Theme", "Visibility" ]
+
+[connection signal="button_up" from="PopUpFrame/BtnBack" to="." method="_on_BtnBack_button_up"]
 
 

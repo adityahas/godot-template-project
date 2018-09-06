@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[ext_resource path="res://assets/PG-Roof-Bold.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 14
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Font", "Resource", "Settings" ]
+
+[resource]
+
+default_font = SubResource( 1 )
+RichTextLabel/colors/default_color = Color( 0, 0.234558, 0.246094, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null
+_sections_unfolded = [ "Resource", "RichTextLabel", "RichTextLabel/colors", "RichTextLabel/constants", "RichTextLabel/fonts", "RichTextLabel/styles", "VScrollBar", "VScrollBar/icons", "VScrollBar/styles" ]
+
