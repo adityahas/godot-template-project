@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mainmenu.png-5b4530baf27d3fe9eef58f1765ce1d11.stex"
+path="res://.import/bg_button_9patch_pressed.png-6178707005a2ff857e87c8d5159872c3.stex"
 
 [deps]
 
-source_file="res://assets/mainmenu.png"
-dest_files=[ "res://.import/mainmenu.png-5b4530baf27d3fe9eef58f1765ce1d11.stex" ]
+source_file="res://assets/bg_button_9patch_pressed.png"
+dest_files=[ "res://.import/bg_button_9patch_pressed.png-6178707005a2ff857e87c8d5159872c3.stex" ]
 
 [params]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scenes/exitconfirmation/ExitConfirmation.gd" type="Script" id=1]
-[ext_resource path="res://scenes/PopUpFrame2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/popup_frame_9patch.png" type="Texture" id=3]
-[ext_resource path="res://assets/sm_theme.tres" type="Theme" id=4]
+[ext_resource path="res://scenes/PopUpFrame2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/sm_btn_theme_2.tres" type="Theme" id=2]
+[ext_resource path="res://assets/popup_banner.png" type="Texture" id=3]
+[ext_resource path="res://assets/sm_font_big.tres" type="Theme" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -31,9 +31,9 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2, 0.5 ),
-"transitions": PoolRealArray( 1, 0.25, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 337, -164 ), Vector2( 337, 290 ), Vector2( 337, 228 ) ]
+"values": [ Vector2( 247, -285 ), Vector2( 247, 290 ), Vector2( 247, 172 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -61,24 +61,26 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3, 0.5 ),
-"transitions": PoolRealArray( 1, 4, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 337, 228 ), Vector2( 337, 292 ), Vector2( 337, -168 ) ]
+"values": [ Vector2( 247, 172 ), Vector2( 247, 292 ), Vector2( 247, -286 ) ]
 }
 
-[node name="ExitConfirmation" type="Control"]
+[node name="About" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 1 )
+_sections_unfolded = [ "Rect" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
@@ -109,48 +111,24 @@ size_flags_vertical = 1
 color = Color( 0, 0, 0, 1 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="PopUpFrame" parent="." index="2" instance=ExtResource( 2 )]
+[node name="PopUpFrame" parent="." index="2" instance=ExtResource( 1 )]
 
-margin_left = 337.0
-margin_top = -164.0
-margin_right = 686.0
-margin_bottom = -21.0
-texture = ExtResource( 3 )
+margin_left = -265.0
+margin_top = -585.0
+margin_right = 264.0
+margin_bottom = -329.0
 _sections_unfolded = [ "Patch Margin", "Rect" ]
 
-[node name="Label" type="Label" parent="PopUpFrame" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpFrame" index="0"]
 
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -124.5
-margin_top = -106.0
-margin_right = 123.5
-margin_bottom = -90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-theme = ExtResource( 4 )
-text = "Anda yakin untuk keluar?"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Theme" ]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PopUpFrame" index="1"]
-
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -82.5
-margin_top = -71.0
-margin_right = 81.5
-margin_bottom = -21.0
+anchor_bottom = 0.5
+margin_left = -125.5
+margin_top = -15.0
+margin_right = 126.5
+margin_bottom = 101.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -158,16 +136,16 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
+_sections_unfolded = [ "Rect" ]
 
-[node name="ButtonYes" type="Button" parent="PopUpFrame/HBoxContainer" index="0"]
+[node name="BtnInformasi" type="Button" parent="PopUpFrame/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 80.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 80, 50 )
+margin_right = 252.0
+margin_bottom = 36.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -175,48 +153,111 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 4 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Ya"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "Theme" ]
-
-[node name="ButtonNo" type="Button" parent="PopUpFrame/HBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 84.0
-margin_right = 164.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 80, 50 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 4 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Tidak"
+text = "Informasi"
 flat = false
 align = 1
 _sections_unfolded = [ "Theme" ]
 
-[connection signal="button_up" from="PopUpFrame/HBoxContainer/ButtonYes" to="." method="_on_ButtonYes_button_up"]
+[node name="BtnMateri" type="Button" parent="PopUpFrame/VBoxContainer" index="1"]
 
-[connection signal="pressed" from="PopUpFrame/HBoxContainer/ButtonYes" to="." method="_on_ButtonYes_pressed"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 40.0
+margin_right = 252.0
+margin_bottom = 76.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Materi"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme" ]
 
-[connection signal="button_up" from="PopUpFrame/HBoxContainer/ButtonNo" to="." method="_on_ButtonNo_button_up"]
+[node name="BtnProfil" type="Button" parent="PopUpFrame/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 80.0
+margin_right = 252.0
+margin_bottom = 116.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Profil"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme" ]
+
+[node name="TextureRect" type="TextureRect" parent="PopUpFrame" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -321.5
+margin_top = -92.0
+margin_right = 320.5
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="PopUpFrame/TextureRect" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.0
+margin_top = -12.5
+margin_right = 63.0
+margin_bottom = 12.5
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 4 )
+text = "Tentang"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Theme" ]
 
 
 [editable path="PopUpFrame"]

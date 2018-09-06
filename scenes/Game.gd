@@ -8,7 +8,6 @@ func _ready():
 	set_process(true)
 	connect("show_exit_confirmation", self, "_show_exit_confirmation")
 	pass
-		
 
 func _process(delta):
 	pass

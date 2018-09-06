@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/splash/Splash.gd" type="Script" id=1]
-[ext_resource path="res://assets/splash.png" type="Texture" id=2]
+[ext_resource path="res://assets/bg_mainmenu.png" type="Texture" id=2]
+[ext_resource path="res://assets/bg_ground.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -36,9 +37,22 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Splash" type="Node2D"]
+[node name="Splash" type="Control" index="0"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Rect" ]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 
@@ -46,8 +60,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_right = 1024.0
+margin_bottom = 600.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -69,5 +83,22 @@ playback_speed = 1.0
 anims/enter = SubResource( 1 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="BgGround" type="TextureRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -72.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 2
+_sections_unfolded = [ "Rect" ]
 
 

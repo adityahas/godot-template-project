@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 onready var loading_thread = Thread.new()
 onready var done_loading_data = false
