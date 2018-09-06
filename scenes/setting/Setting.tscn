@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scenes/about/About.gd" type="Script" id=1]
+[ext_resource path="res://scenes/setting/Setting.gd" type="Script" id=1]
 [ext_resource path="res://scenes/PopUpFrame2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/sm_btn_theme_2.tres" type="Theme" id=3]
-[ext_resource path="res://assets/sm_theme.tres" type="Theme" id=4]
-[ext_resource path="res://assets/popup_banner.png" type="Texture" id=5]
-[ext_resource path="res://assets/sm_font_big.tres" type="Theme" id=6]
+[ext_resource path="res://assets/popup2_frame_9patch.png" type="Texture" id=3]
+[ext_resource path="res://assets/sm_btn_theme_2.tres" type="Theme" id=4]
+[ext_resource path="res://assets/sm_theme.tres" type="Theme" id=5]
+[ext_resource path="res://assets/popup_banner.png" type="Texture" id=6]
+[ext_resource path="res://assets/sm_font_big.tres" type="Theme" id=7]
 
 [sub_resource type="Animation" id=1]
 
@@ -68,7 +69,7 @@ tracks/1/keys = {
 "values": [ Vector2( 247, 172 ), Vector2( 247, 292 ), Vector2( 247, -286 ) ]
 }
 
-[node name="About" type="Control" index="0"]
+[node name="Setting" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -115,12 +116,27 @@ size_flags_vertical = 1
 color = Color( 0, 0, 0, 1 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="PopUpFrame" parent="." index="2" instance=ExtResource( 2 )]
+[node name="PopUpFrame" type="NinePatchRect" parent="." index="2" instance=ExtResource( 2 )]
 
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -265.0
 margin_top = -585.0
 margin_right = 264.0
 margin_bottom = -306.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
 _sections_unfolded = [ "Patch Margin", "Rect" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PopUpFrame" index="0"]
@@ -132,7 +148,7 @@ anchor_bottom = 0.5
 margin_left = -125.5
 margin_top = -44.5
 margin_right = 126.5
-margin_bottom = 111.5
+margin_bottom = 71.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -142,7 +158,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="BtnInformasi" type="Button" parent="PopUpFrame/VBoxContainer" index="0"]
+[node name="BtnMusic" type="Button" parent="PopUpFrame/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -157,17 +173,17 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 3 )
+theme = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Informasi"
+text = "Music : On"
 flat = false
 align = 1
 _sections_unfolded = [ "Theme" ]
 
-[node name="BtnMateri" type="Button" parent="PopUpFrame/VBoxContainer" index="1"]
+[node name="BtnSFX" type="Button" parent="PopUpFrame/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -183,17 +199,17 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 3 )
+theme = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Materi"
+text = "SFX : On"
 flat = false
 align = 1
 _sections_unfolded = [ "Theme" ]
 
-[node name="BtnProfil" type="Button" parent="PopUpFrame/VBoxContainer" index="2"]
+[node name="BtnTutorial" type="Button" parent="PopUpFrame/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -209,15 +225,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 3 )
+theme = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Profil"
+text = "Cara Bermain"
 flat = false
 align = 1
-_sections_unfolded = [ "Theme" ]
+_sections_unfolded = [ "Rect", "Theme" ]
 
 [node name="BtnClose" type="Button" parent="PopUpFrame/VBoxContainer" index="3"]
 
@@ -235,7 +251,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 4 )
+theme = ExtResource( 5 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -243,7 +259,7 @@ group = null
 text = "Tutup"
 flat = false
 align = 1
-_sections_unfolded = [ "Material", "Theme", "Visibility", "custom_colors" ]
+_sections_unfolded = [ "Theme" ]
 
 [node name="BgTitle" type="TextureRect" parent="PopUpFrame" index="1"]
 
@@ -261,7 +277,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
@@ -282,8 +298,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 6 )
-text = "Tentang"
+theme = ExtResource( 7 )
+text = "Setting"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -292,4 +308,3 @@ _sections_unfolded = [ "Rect", "Theme" ]
 [connection signal="button_up" from="PopUpFrame/VBoxContainer/BtnClose" to="." method="_on_BtnClose_button_up"]
 
 
-[editable path="PopUpFrame"]

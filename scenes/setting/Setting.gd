@@ -15,13 +15,7 @@ func _ready():
 #	pass
 
 
-func _on_BtnAbout_button_up():
-	var scene = load(GameVars.STAGE_ABOUT)
-	var node = scene.instance()
-	get_tree().get_current_scene().add_child(node)
-
-
-func _on_BtnSetting_button_up():
-	var scene = load(GameVars.STAGE_ABOUT)
-	var node = scene.instance()
-	get_tree().get_current_scene().add_child(node)
+func _on_BtnClose_button_up():
+	get_node("AnimationPlayer").play("exit")
+	yield(get_node("AnimationPlayer"), "animation_finished")
+	queue_free()

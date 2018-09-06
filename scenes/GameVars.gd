@@ -7,6 +7,7 @@ var enable_sfx = true
 const STAGE_SPLASH = "res://scenes/splash/Splash.tscn"
 const STAGE_MAIN_MENU = "res://scenes/mainmenu/MainMenu.tscn"
 const STAGE_ABOUT = "res://scenes/about/About.tscn"
+const STAGE_SETTING = "res://scenes/setting/Setting.tscn"
 const STAGE_EXIT_CONFIRMATION = "res://scenes/exit_confirmation/exit_confirmation.tscn"
 
 const SAVE_GAME_NAME_GENERAL = "MyGameBerhitung_general"

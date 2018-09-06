@@ -23,6 +23,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1024.0
 margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -151,6 +152,8 @@ texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 13 )
 texture_disabled = ExtResource( 14 )
 _sections_unfolded = [ "Margin", "Textures" ]
+
+[connection signal="button_up" from="BtnSetting" to="." method="_on_BtnSetting_button_up"]
 
 [connection signal="button_up" from="BtnAbout" to="." method="_on_BtnAbout_button_up"]
 
