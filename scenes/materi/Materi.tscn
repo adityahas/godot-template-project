@@ -1,0 +1,433 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/PopUpFrame2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/popup2_frame_9patch.png" type="Texture" id=2]
+[ext_resource path="res://assets/sm_theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/popup_banner.png" type="Texture" id=4]
+[ext_resource path="res://assets/sm_font_big.tres" type="Theme" id=5]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "enter"
+length = 0.5
+loop = false
+step = 0.05
+
+[sub_resource type="Animation" id=2]
+
+length = 0.5
+loop = false
+step = 0.05
+
+[node name="Materi" type="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 1024, 600 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+
+root_node = NodePath("..")
+autoplay = "enter"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/enter = SubResource( 1 )
+anims/exit = SubResource( 2 )
+blend_times = [  ]
+
+[node name="ColorRect" type="ColorRect" parent="." index="1"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="PopUpFrame" type="NinePatchRect" parent="." index="2" instance=ExtResource( 1 )]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -265.0
+margin_top = -744.0
+margin_right = 264.0
+margin_bottom = -376.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+_sections_unfolded = [ "Patch Margin", "Rect" ]
+
+[node name="BtnBack" type="Button" parent="PopUpFrame" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 139.0
+margin_top = 344.0
+margin_right = 391.0
+margin_bottom = 380.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Tutup"
+flat = false
+align = 1
+_sections_unfolded = [ "Material", "Theme", "Visibility", "custom_colors" ]
+
+[node name="BgTitle" type="TextureRect" parent="PopUpFrame" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -321.5
+margin_top = -166.0
+margin_right = 320.5
+margin_bottom = -114.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="PopUpFrame/BgTitle" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.0
+margin_top = -13.0
+margin_right = 63.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 5 )
+text = "Informasi"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Theme" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopUpFrame" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 34.0
+margin_top = 87.0
+margin_right = 488.0
+margin_bottom = 329.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = true
+bbcode_text = "1)	Iman kepada Allah
+Berarti membenarkan dengan lisan, mengikrarkan dengan lisan, mengamalkan  dengan anggota badan.  
+Dalilnya : Surat An Nisa 136
+يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ ءَامِنُواْ بِٱللَّهِ وَرَسُولِهِۦ وَٱلۡكِتَٰبِ ٱلَّذِي نَزَّلَ عَلَىٰ رَسُولِهِۦ وَٱلۡكِتَٰبِ ٱلَّذِيٓ أَنزَلَ مِن قَبۡلُۚ وَمَن يَكۡفُرۡ بِٱللَّهِ وَمَلَٰٓئِكَتِهِۦ وَكُتُبِهِۦ وَرُسُلِهِۦ وَٱلۡيَوۡمِ ٱلۡأٓخِرِ فَقَدۡ ضَلَّ ضَلَٰلَۢا بَعِيدًا ١٣٦ 
+136. Wahai orang-orang yang beriman, tetaplah beriman kepada Allah dan Rasul-Nya dan kepada kitab yang Allah turunkan kepada Rasul-Nya serta kitab yang Allah turunkan sebelumnya. Barangsiapa yang kafir kepada Allah, malaikat-malaikat-Nya, kitab-kitab-Nya, rasul-rasul-Nya, dan hari Kemudian, Maka Sesungguhnya orang itu telah sesat sejauh-jauhnya.
+	
+a.	Bukti adanya Allah 
+-	Adanya Alqur’an
+-	Terciptanya alam semesta
+-	Semua peristiwa Alam
+b.	Cerminan dari Beriman kepada Allah 
+Iman tidak sekedar meyakini akan keberadaanNya saja namun harus dicerminkan dalam kehidupan sehari-hari sesuai Firman Allah dalam surat Al Baqarah ayat 177 seperti ; sholat 5 waktu, berzakat, puasa wajib, tolong menolong dan menginfakkan sebagaian harta.
+
+2)	Tauhid Rububiyah
+Berarti meyakini bahwa Allah satu-satunya pencipta, pemelihara dan pengatur alam semesta
+Perbuatan yang merusak kesempurnaan Tauhid diantaranya ; syirik, nifaq dan kufur
+Dalilnya : surat Ad Dukhan ayat 7-8
+رَبِّ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ وَمَا بَيۡنَهُمَآۖ إِن كُنتُم مُّوقِنِينَ ٧ لَآ إِلَٰهَ إِلَّا هُوَ يُحۡيِۦ وَيُمِيتُۖ رَبُّكُمۡ وَرَبُّ ءَابَآئِكُمُ ٱلۡأَوَّلِينَ ٨ 
+7. Tuhan yang memelihara langit dan bumi dan apa yang ada di antara keduanya, jika kamu adalah orang yang meyakini. 
+8. Tidak ada Tuhan (yang berhak disembah) melainkan Dia, yang menghidupkan dan yang mematikan (Dialah) Tuhanmu dan Tuhan bapak-bapakmu yang terdahulu.
+
+3)	Kehidupan dunia dan kehidupan Akhirat
+Q.S Al Baqarah ayat 177
+۞لَّيۡسَ ٱلۡبِرَّ أَن تُوَلُّواْ وُجُوهَكُمۡ قِبَلَ ٱلۡمَشۡرِقِ وَٱلۡمَغۡرِبِ وَلَٰكِنَّ ٱلۡبِرَّ مَنۡ ءَامَنَ بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِ وَٱلۡمَلَٰٓئِكَةِ وَٱلۡكِتَٰبِ وَٱلنَّبِيِّۧنَ وَءَاتَى ٱلۡمَالَ عَلَىٰ حُبِّهِۦ ذَوِي ٱلۡقُرۡبَىٰ وَٱلۡيَتَٰمَىٰ وَٱلۡمَسَٰكِينَ وَٱبۡنَ ٱلسَّبِيلِ وَٱلسَّآئِلِينَ وَفِي ٱلرِّقَابِ وَأَقَامَ ٱلصَّلَوٰةَ وَءَاتَى ٱلزَّكَوٰةَ وَٱلۡمُوفُونَ بِعَهۡدِهِمۡ إِذَا عَٰهَدُواْۖ وَٱلصَّٰبِرِينَ فِي ٱلۡبَأۡسَآءِ وَٱلضَّرَّآءِ وَحِينَ ٱلۡبَأۡسِۗ أُوْلَٰٓئِكَ ٱلَّذِينَ صَدَقُواْۖ وَأُوْلَٰٓئِكَ هُمُ ٱلۡمُتَّقُونَ ١٧٧ 
+177. Bukanlah menghadapkan wajahmu ke arah timur dan barat itu suatu kebajikan, akan tetapi Sesungguhnya kebajikan itu ialah beriman kepada Allah, hari Kemudian, malaikat-malaikat, kitabkitab, nabi-nabi dan memberikan harta yang dicintainya kepada kerabatnya, anak-anak yatim, orangorang miskin, musafir (yang memerlukan pertolongan) dan orang-orang yang meminta-minta; dan (memerdekakan) hamba sahaya, mendirikan shalat, dan menunaikan zakat; dan orang-orang yang menepati janjinya apabila ia berjanji, dan orang-orang yang sabar dalam kesempitan, penderitaan dan dalam peperangan. mereka Itulah orang-orang yang benar (imannya); dan mereka Itulah orang-orang yang bertakwa.
+
+a.	Memahami peristiwa yang terjadi pada hari akhir
+Tahapan-tahapannya :
+-	Alam barzah (Q.S Al Mukminun ayat 100)
+-	Yaumul Ba’ats / hari berbangkit ( Q.S Al Mujadilah ayat 6)
+-	Yaumul Masyhar / hari berkumpul ( Q.S Al An’am ayat 22)
+-	Yaumul hisab / perhitungan (Q.S Al Insyiqaq ayat 7-12)
+-	Yaumul Mizan / hari penimbangan (Q.S Al Qariah ayat 6-9)
+-	Yaumul Jaza’ / hari pembalasan (Q.S Al Bayyinah 6-8)
+
+b.	Memahami kehidupan Dunia fana
+Kehidupan didunia itu pendek dan apa yang ada didunia itu rendah dan hina, dalilnya surat Al Hadid ayat 20 
+ٱعۡلَمُوٓاْ أَنَّمَا ٱلۡحَيَوٰةُ ٱلدُّنۡيَا لَعِبٞ وَلَهۡوٞ وَزِينَةٞ وَتَفَاخُرُۢ بَيۡنَكُمۡ وَتَكَاثُرٞ فِي ٱلۡأَمۡوَٰلِ وَٱلۡأَوۡلَٰدِۖ كَمَثَلِ غَيۡثٍ أَعۡجَبَ ٱلۡكُفَّارَ نَبَاتُهُۥ ثُمَّ يَهِيجُ فَتَرَىٰهُ مُصۡفَرّٗا ثُمَّ يَكُونُ حُطَٰمٗاۖ وَفِي ٱلۡأٓخِرَةِ عَذَابٞ شَدِيدٞ وَمَغۡفِرَةٞ مِّنَ ٱللَّهِ وَرِضۡوَٰنٞۚ وَمَا ٱلۡحَيَوٰةُ ٱلدُّنۡيَآ إِلَّا مَتَٰعُ ٱلۡغُرُورِ ٢٠ 
+20. Ketahuilah, bahwa Sesungguhnya kehidupan dunia ini hanyalah permainan dan suatu yang melalaikan, perhiasan dan bermegah- megah antara kamu serta berbangga-banggaan tentang banyaknya harta dan anak, seperti hujan yang tanam-tanamannya mengagumkan Para petani; kemudian tanaman itu menjadi kering dan kamu Lihat warnanya kuning kemudian menjadi hancur. dan di akhirat (nanti) ada azab yang keras dan ampunan dari Allah serta keridhaan-Nya. dan kehidupan dunia ini tidak lain hanyalah kesenangan yang menipu.
+
+c.	Kehidupan Akhirat Kekal
+Kehidupan didunia sebenarnya adalah kehidupan menuju akhirat dengan kata lain kehidupan dunia adalah medan persediaan dan persiapan untuk menuju kehidupan yang kekal sepanjang zaman. Ini tertuang dalam Alqur’an surat Al A’la ayat 17.
+Surat Al A’la ayat 17 
+ وَٱلۡأٓخِرَةُ خَيۡرٞ وَأَبۡقَىٰٓ ١٧ 
+“ Sedang kehidupan akhirat adalah lebih baik dan lebih kekal”.
+
+-	Balasan baik berupa surga
+Surga menjadi tempat yang diperuntukkan bagi orang yang beriman dan banyaka beramal shaleh (Q.S Al Baqarah ayat 25)
+وَبَشِّرِ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ أَنَّ لَهُمۡ جَنَّٰتٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُۖ كُلَّمَا رُزِقُواْ مِنۡهَا مِن ثَمَرَةٖ رِّزۡقٗا قَالُواْ هَٰذَا ٱلَّذِي رُزِقۡنَا مِن قَبۡلُۖ وَأُتُواْ بِهِۦ مُتَشَٰبِهٗاۖ وَلَهُمۡ فِيهَآ أَزۡوَٰجٞ مُّطَهَّرَةٞۖ وَهُمۡ فِيهَا خَٰلِدُونَ ٢٥ 
+25. Dan sampaikanlah berita gembira kepada mereka yang beriman dan berbuat baik, bahwa bagi mereka disediakan surga-surga yang mengalir sungai-sungai di dalamnya. Setiap mereka diberi rezki buah-buahan dalam surga-surga itu, mereka mengatakan : \"Inilah yang pernah diberikan kepada Kami dahulu.\" mereka diberi buah-buahan yang serupa dan untuk mereka di dalamnya ada isteri-isteri yang suci dan mereka kekal di dalamnya.
+
+-	Balasan buruk berupa neraka
+Neraka menjadi tempat terakhir bagi orang yang memiliki amal buruk , kafir, musyrik dan fasik ( Q.S Al Ahqaf ayat 20)
+وَيَوۡمَ يُعۡرَضُ ٱلَّذِينَ كَفَرُواْ عَلَى ٱلنَّارِ أَذۡهَبۡتُمۡ طَيِّبَٰتِكُمۡ فِي حَيَاتِكُمُ ٱلدُّنۡيَا وَٱسۡتَمۡتَعۡتُم بِهَا فَٱلۡيَوۡمَ تُجۡزَوۡنَ عَذَابَ ٱلۡهُونِ بِمَا كُنتُمۡ تَسۡتَكۡبِرُونَ فِي ٱلۡأَرۡضِ بِغَيۡرِ ٱلۡحَقِّ وَبِمَا كُنتُمۡ تَفۡسُقُونَ ٢٠ 
+20. Dan (ingatlah) hari (ketika) orang-orang kafir dihadapkan ke neraka (kepada mereka dikatakan): \"Kamu telah menghabiskan rezkimu yang baik dalam kehidupan duniawimu (saja) dan kamu telah bersenang-senang dengannya; Maka pada hari ini kamu dibalasi dengan azab yang menghinakan karena kamu telah menyombongkan diri di muka bumi tanpa hak dan karena kamu telah fasik\".
+
+Peneliti ingin memberikan gambaran yang lebih mudah bagi anak didik untuk meyakini, memahami bahwa setiap manusia mempunyai kewajiban untuk mengumpulkan bekal di kehidupan dunia untuk mendapatkan keselamatan di akhirat dengan game yang oleh peneliti dinamai “Game Shiratal Mustaqim”.
+
+-	Shiratal Mustaqim
+Shirath al mustaqim banyak dijumpai dalam Alqur’an bahkan kata ini hampir setiap nafas diucapkan umat muslim yakni pada kata “ihdinas shiratal mustaqim” yang jika diterjemahkan berarti tunjukkanlah kami ke jalan yang lurus.
+Dalam keyakinan umat Islam jembatan shiratal mustaqimadalah jalan panang diatas neraka dan jalan akhir dari jembatan ini adalah surgA. Terkait shiratal mustaqim Allah sudah menjelaskan dalam surat Maryam ayat 71-72.
+وَإِن مِّنكُمۡ إِلَّا وَارِدُهَاۚ كَانَ عَلَىٰ رَبِّكَ حَتۡمٗا مَّقۡضِيّٗا ٧١ ثُمَّ نُنَجِّي ٱلَّذِينَ ٱتَّقَواْ وَّنَذَرُ ٱلظَّٰلِمِينَ فِيهَا جِثِيّٗا ٧٢ 
+71. Dan tidak ada seorangpun dari padamu, melainkan mendatangi neraka itu. hal itu bagi Tuhanmu adalah suatu kemestian yang sudah ditetapkan. 
+72. Kemudian Kami akan menyelamatkan orang-orang yang bertakwa dan membiarkan orang-orang yang zalim di dalam neraka dalam Keadaan berlutut.
+
+Dalam riwayat dari Imam Ahmad Perjalanan manusia diatas shiratal mustaqim dengan bermacam-macam keadaan :
+1)	Ada yang melewatinya secapat kilat
+2)	Ada yang melewatinya berlari seperti angin
+3)	Ada yang melintasinya seperti kecepatan kuda
+4)	Ada golongan yang melintasinya dengan berlari biasa
+5)	Ada golongan yang melintasinya dengan berjalan 
+6)	Ada golongan yang melintasinya dengan merangkak
+7)	Ada golongan yang melintasinya dengan bergelantungan
+8)	Ada golongan yang langsung jatuh ke neraka.
+
+Bekal agar mudah melewati jembatan shiratal mustaqim :
+a)	Taubat (Q.S At Tahrim ayat 8)
+b)	Menegakkan shalat, jaminan memiliki cahaya yang cukup jika rajin menegakkan shalat sesuai dengan hadits Rasulullah yang diriwayatkan oleh Ibnu majah dan HR.Bukhori
+عَنْ اَبِى هُرَيْرَةَ قَالَ: سَمِعْتُ رَسُوْلَ اللهِ ص يَقُوْلُ: اِنَّ اَوَّلَ مَا يُحَاسَبُ بِهِ اْلعَبْدُ يَوْمَ اْلقِيَامَةِ الصَّلاَةُ اْلمَكْتُوْبَةُ فَاِنْ اَتَمَّهَا وَ اِلاَّ قِيْلَ. اُنْظُرُوْا، هَلْ لَهُ مِنْ تَطَوُّعٍ؟ فَاِنْ كَانَ لَهُ تَطَوُّعٌ اُكْمِلَتِ اْلفَرِيْضَةُ مِنْ تَطَوُّعِهِ، ثُمَّ يُفْعَلُ بِسَائِرِ اْلاَعْمَالِ اْلمَفْرُوْضَةِ مِثْلُ ذلِكَ. الخمسة، فى نيل الاوطار 
+
+Dari Abu Hurairah, ia berkata : Saya mendengar Rasulullah SAW bersabda, “Sesungguhnya pertama-tama perbuatan manusia yang dihisab pada hari qiyamat, adalah shalat wajib. Maka apabila ia telah menyempurnakannya (maka selesailah persoalannya). Tetapi apabila tidak sempurna shalatnya, dikatakan (kepada malaikat), “Lihatlah dulu, apakah ia pernah mengerjakan shalat sunnah ! Jika ia mengerjakan shalat sunnah, maka kekurangan dalam shalat wajib disempurnakan dengan shalat sunnahnya”. Kemudian semua amal-amal yang wajib diperlakukan seperti itu”. [HR. Khamsah, dalam Nailul Authar juz 1, hal. 345]
+
+Dari Jabir bin „Abdillah, Rasulullah shallallahu „alaihi wa sallam bersabda,
+بَيْنَ الرَّجُلِ وَبَيْنَ الشِّرْكِ وَالْكُفْرِ تَرْكُ الصَّلاَةِ
+“(Pembatas) antara seorang muslim dan kesyirikan serta kekafiran adalah meninggalkan shalat.” (HR. Muslim no. 257)
+
+c)	Melindungi sesama muslim dari kejahatan orang munafik ini disebutkan dalam sebuah hadits yang diriwiyatkan oleh HR. Abu Dawud
+d)	Ikhlas bersedekah
+e)	Membantu orang lain
+
+Adapun dalil yang dituangkan dalam game untuk memperkuat alur permainan diantaranya :
+1.	2  Kalimat Syahadat
+2.	Q.S An Najm ayat 39-42
+ وَأَن لَّيۡسَ لِلۡإِنسَٰنِ إِلَّا مَا سَعَىٰ ٣٩ وَأَنَّ سَعۡيَهُۥ سَوۡفَ يُرَىٰ ٤٠  ثُمَّ يُجۡزَىٰهُ ٱلۡجَزَآءَ ٱلۡأَوۡفَىٰ ٤١  وَأَنَّ إِلَىٰ رَبِّكَ ٱلۡمُنتَهَىٰ ٤٢ 
+39. Dan bahwasanya seorang manusia tiada memperoleh selain apa yang telah diusahakannya,
+40. Dan bahwasanya usaha itu kelak akan diperlihat (kepadanya).
+41. Kemudian akan diberi Balasan kepadanya dengan Balasan yang paling sempurna,
+42. Dan bahwasanya kepada Tuhamulah kesudahan (segala sesuatu)
+
+3.	Hadits Larangan Sombong 
+4.	Larangan Syirik
+Q.S An Nisa ayat 36
+۞وَٱعۡبُدُواْ ٱللَّهَ وَلَا تُشۡرِكُواْ بِهِۦ شَيۡٔٗاۖ وَبِٱلۡوَٰلِدَيۡنِ إِحۡسَٰنٗا وَبِذِي ٱلۡقُرۡبَىٰ وَٱلۡيَتَٰمَىٰ وَٱلۡمَسَٰكِينِ وَٱلۡجَارِ ذِي ٱلۡقُرۡبَىٰ وَٱلۡجَارِ ٱلۡجُنُبِ وَٱلصَّاحِبِ بِٱلۡجَنۢبِ وَٱبۡنِ ٱلسَّبِيلِ وَمَا مَلَكَتۡ أَيۡمَٰنُكُمۡۗ إِنَّ ٱللَّهَ لَا يُحِبُّ مَن كَانَ مُخۡتَالٗا فَخُورًا ٣٦ 
+36. Sembahlah Allah dan janganlah kamu mempersekutukan-Nya dengan sesuatupun. dan berbuat baiklah kepada dua orang ibu-bapa, karib-kerabat, anak-anak yatim, orang-orang miskin, tetangga yang dekat dan tetangga yang jauh, dan teman sejawat, Ibnu sabil dan hamba sahayamu. Sesungguhnya Allah tidak menyukai orang-orang yang sombong dan membangga-banggakan diri.
+
+5.	Kehidupan Dunia -Akhirat
+Q.S Al Hadid ayat 20
+ٱعۡلَمُوٓاْ أَنَّمَا ٱلۡحَيَوٰةُ ٱلدُّنۡيَا لَعِبٞ وَلَهۡوٞ وَزِينَةٞ وَتَفَاخُرُۢ بَيۡنَكُمۡ وَتَكَاثُرٞ فِي ٱلۡأَمۡوَٰلِ وَٱلۡأَوۡلَٰدِۖ كَمَثَلِ غَيۡثٍ أَعۡجَبَ ٱلۡكُفَّارَ نَبَاتُهُۥ ثُمَّ يَهِيجُ فَتَرَىٰهُ مُصۡفَرّٗا ثُمَّ يَكُونُ حُطَٰمٗاۖ وَفِي ٱلۡأٓخِرَةِ عَذَابٞ شَدِيدٞ وَمَغۡفِرَةٞ مِّنَ ٱللَّهِ وَرِضۡوَٰنٞۚ وَمَا ٱلۡحَيَوٰةُ ٱلدُّنۡيَآ إِلَّا مَتَٰعُ ٱلۡغُرُورِ ٢٠ 
+20. Ketahuilah, bahwa Sesungguhnya kehidupan dunia ini hanyalah permainan dan suatu yang melalaikan, perhiasan dan bermegah- megah antara kamu serta berbangga-banggaan tentang banyaknya harta dan anak, seperti hujan yang tanam-tanamannya mengagumkan Para petani; kemudian tanaman itu menjadi kering dan kamu Lihat warnanya kuning kemudian menjadi hancur. dan di akhirat (nanti) ada azab yang keras dan ampunan dari Allah serta keridhaan-Nya. dan kehidupan dunia ini tidak lain hanyalah kesenangan yang menipu.
+
+6.	Pentingnya Waktu
+Q.S Al ‘Asr ayat 1-3
+وَٱلۡعَصۡرِ ١  إِنَّ ٱلۡإِنسَٰنَ لَفِي خُسۡرٍ ٢  إِلَّا ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ وَتَوَاصَوۡاْ بِٱلۡحَقِّ وَتَوَاصَوۡاْ بِٱلصَّبۡرِ ٣ 
+1. Demi masa.
+2. Sesungguhnya manusia itu benar-benar dalam kerugian,
+3. Kecuali orang-orang yang beriman dan mengerjakan amal saleh dan nasehat menasehati supaya mentaati kebenaran dan nasehat menasehati supaya menetapi kesabaran.
+
+7.	Berlomba-lomba dalam Kebaikan
+Q.S Al Baqarah ayat 148
+وَلِكُلّٖ وِجۡهَةٌ هُوَ مُوَلِّيهَاۖ فَٱسۡتَبِقُواْ ٱلۡخَيۡرَٰتِۚ أَيۡنَ مَا تَكُونُواْ يَأۡتِ بِكُمُ ٱللَّهُ جَمِيعًاۚ إِنَّ ٱللَّهَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٞ ١٤٨ 
+148. Dan bagi tiap-tiap umat ada kiblatnya (sendiri) yang ia menghadap kepadanya. Maka berlomba-lombalah (dalam membuat) kebaikan. di mana saja kamu berada pasti Allah akan mengumpulkan kamu sekalian (pada hari kiamat). Sesungguhnya Allah Maha Kuasa atas segala sesuatu.
+"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "1)	Iman kepada Allah
+Berarti membenarkan dengan lisan, mengikrarkan dengan lisan, mengamalkan  dengan anggota badan.  
+Dalilnya : Surat An Nisa 136
+يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ ءَامِنُواْ بِٱللَّهِ وَرَسُولِهِۦ وَٱلۡكِتَٰبِ ٱلَّذِي نَزَّلَ عَلَىٰ رَسُولِهِۦ وَٱلۡكِتَٰبِ ٱلَّذِيٓ أَنزَلَ مِن قَبۡلُۚ وَمَن يَكۡفُرۡ بِٱللَّهِ وَمَلَٰٓئِكَتِهِۦ وَكُتُبِهِۦ وَرُسُلِهِۦ وَٱلۡيَوۡمِ ٱلۡأٓخِرِ فَقَدۡ ضَلَّ ضَلَٰلَۢا بَعِيدًا ١٣٦ 
+136. Wahai orang-orang yang beriman, tetaplah beriman kepada Allah dan Rasul-Nya dan kepada kitab yang Allah turunkan kepada Rasul-Nya serta kitab yang Allah turunkan sebelumnya. Barangsiapa yang kafir kepada Allah, malaikat-malaikat-Nya, kitab-kitab-Nya, rasul-rasul-Nya, dan hari Kemudian, Maka Sesungguhnya orang itu telah sesat sejauh-jauhnya.
+	
+a.	Bukti adanya Allah 
+-	Adanya Alqur’an
+-	Terciptanya alam semesta
+-	Semua peristiwa Alam
+b.	Cerminan dari Beriman kepada Allah 
+Iman tidak sekedar meyakini akan keberadaanNya saja namun harus dicerminkan dalam kehidupan sehari-hari sesuai Firman Allah dalam surat Al Baqarah ayat 177 seperti ; sholat 5 waktu, berzakat, puasa wajib, tolong menolong dan menginfakkan sebagaian harta.
+
+2)	Tauhid Rububiyah
+Berarti meyakini bahwa Allah satu-satunya pencipta, pemelihara dan pengatur alam semesta
+Perbuatan yang merusak kesempurnaan Tauhid diantaranya ; syirik, nifaq dan kufur
+Dalilnya : surat Ad Dukhan ayat 7-8
+رَبِّ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ وَمَا بَيۡنَهُمَآۖ إِن كُنتُم مُّوقِنِينَ ٧ لَآ إِلَٰهَ إِلَّا هُوَ يُحۡيِۦ وَيُمِيتُۖ رَبُّكُمۡ وَرَبُّ ءَابَآئِكُمُ ٱلۡأَوَّلِينَ ٨ 
+7. Tuhan yang memelihara langit dan bumi dan apa yang ada di antara keduanya, jika kamu adalah orang yang meyakini. 
+8. Tidak ada Tuhan (yang berhak disembah) melainkan Dia, yang menghidupkan dan yang mematikan (Dialah) Tuhanmu dan Tuhan bapak-bapakmu yang terdahulu.
+
+3)	Kehidupan dunia dan kehidupan Akhirat
+Q.S Al Baqarah ayat 177
+۞لَّيۡسَ ٱلۡبِرَّ أَن تُوَلُّواْ وُجُوهَكُمۡ قِبَلَ ٱلۡمَشۡرِقِ وَٱلۡمَغۡرِبِ وَلَٰكِنَّ ٱلۡبِرَّ مَنۡ ءَامَنَ بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِ وَٱلۡمَلَٰٓئِكَةِ وَٱلۡكِتَٰبِ وَٱلنَّبِيِّۧنَ وَءَاتَى ٱلۡمَالَ عَلَىٰ حُبِّهِۦ ذَوِي ٱلۡقُرۡبَىٰ وَٱلۡيَتَٰمَىٰ وَٱلۡمَسَٰكِينَ وَٱبۡنَ ٱلسَّبِيلِ وَٱلسَّآئِلِينَ وَفِي ٱلرِّقَابِ وَأَقَامَ ٱلصَّلَوٰةَ وَءَاتَى ٱلزَّكَوٰةَ وَٱلۡمُوفُونَ بِعَهۡدِهِمۡ إِذَا عَٰهَدُواْۖ وَٱلصَّٰبِرِينَ فِي ٱلۡبَأۡسَآءِ وَٱلضَّرَّآءِ وَحِينَ ٱلۡبَأۡسِۗ أُوْلَٰٓئِكَ ٱلَّذِينَ صَدَقُواْۖ وَأُوْلَٰٓئِكَ هُمُ ٱلۡمُتَّقُونَ ١٧٧ 
+177. Bukanlah menghadapkan wajahmu ke arah timur dan barat itu suatu kebajikan, akan tetapi Sesungguhnya kebajikan itu ialah beriman kepada Allah, hari Kemudian, malaikat-malaikat, kitabkitab, nabi-nabi dan memberikan harta yang dicintainya kepada kerabatnya, anak-anak yatim, orangorang miskin, musafir (yang memerlukan pertolongan) dan orang-orang yang meminta-minta; dan (memerdekakan) hamba sahaya, mendirikan shalat, dan menunaikan zakat; dan orang-orang yang menepati janjinya apabila ia berjanji, dan orang-orang yang sabar dalam kesempitan, penderitaan dan dalam peperangan. mereka Itulah orang-orang yang benar (imannya); dan mereka Itulah orang-orang yang bertakwa.
+
+a.	Memahami peristiwa yang terjadi pada hari akhir
+Tahapan-tahapannya :
+-	Alam barzah (Q.S Al Mukminun ayat 100)
+-	Yaumul Ba’ats / hari berbangkit ( Q.S Al Mujadilah ayat 6)
+-	Yaumul Masyhar / hari berkumpul ( Q.S Al An’am ayat 22)
+-	Yaumul hisab / perhitungan (Q.S Al Insyiqaq ayat 7-12)
+-	Yaumul Mizan / hari penimbangan (Q.S Al Qariah ayat 6-9)
+-	Yaumul Jaza’ / hari pembalasan (Q.S Al Bayyinah 6-8)
+
+b.	Memahami kehidupan Dunia fana
+Kehidupan didunia itu pendek dan apa yang ada didunia itu rendah dan hina, dalilnya surat Al Hadid ayat 20 
+ٱعۡلَمُوٓاْ أَنَّمَا ٱلۡحَيَوٰةُ ٱلدُّنۡيَا لَعِبٞ وَلَهۡوٞ وَزِينَةٞ وَتَفَاخُرُۢ بَيۡنَكُمۡ وَتَكَاثُرٞ فِي ٱلۡأَمۡوَٰلِ وَٱلۡأَوۡلَٰدِۖ كَمَثَلِ غَيۡثٍ أَعۡجَبَ ٱلۡكُفَّارَ نَبَاتُهُۥ ثُمَّ يَهِيجُ فَتَرَىٰهُ مُصۡفَرّٗا ثُمَّ يَكُونُ حُطَٰمٗاۖ وَفِي ٱلۡأٓخِرَةِ عَذَابٞ شَدِيدٞ وَمَغۡفِرَةٞ مِّنَ ٱللَّهِ وَرِضۡوَٰنٞۚ وَمَا ٱلۡحَيَوٰةُ ٱلدُّنۡيَآ إِلَّا مَتَٰعُ ٱلۡغُرُورِ ٢٠ 
+20. Ketahuilah, bahwa Sesungguhnya kehidupan dunia ini hanyalah permainan dan suatu yang melalaikan, perhiasan dan bermegah- megah antara kamu serta berbangga-banggaan tentang banyaknya harta dan anak, seperti hujan yang tanam-tanamannya mengagumkan Para petani; kemudian tanaman itu menjadi kering dan kamu Lihat warnanya kuning kemudian menjadi hancur. dan di akhirat (nanti) ada azab yang keras dan ampunan dari Allah serta keridhaan-Nya. dan kehidupan dunia ini tidak lain hanyalah kesenangan yang menipu.
+
+c.	Kehidupan Akhirat Kekal
+Kehidupan didunia sebenarnya adalah kehidupan menuju akhirat dengan kata lain kehidupan dunia adalah medan persediaan dan persiapan untuk menuju kehidupan yang kekal sepanjang zaman. Ini tertuang dalam Alqur’an surat Al A’la ayat 17.
+Surat Al A’la ayat 17 
+ وَٱلۡأٓخِرَةُ خَيۡرٞ وَأَبۡقَىٰٓ ١٧ 
+“ Sedang kehidupan akhirat adalah lebih baik dan lebih kekal”.
+
+-	Balasan baik berupa surga
+Surga menjadi tempat yang diperuntukkan bagi orang yang beriman dan banyaka beramal shaleh (Q.S Al Baqarah ayat 25)
+وَبَشِّرِ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ أَنَّ لَهُمۡ جَنَّٰتٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُۖ كُلَّمَا رُزِقُواْ مِنۡهَا مِن ثَمَرَةٖ رِّزۡقٗا قَالُواْ هَٰذَا ٱلَّذِي رُزِقۡنَا مِن قَبۡلُۖ وَأُتُواْ بِهِۦ مُتَشَٰبِهٗاۖ وَلَهُمۡ فِيهَآ أَزۡوَٰجٞ مُّطَهَّرَةٞۖ وَهُمۡ فِيهَا خَٰلِدُونَ ٢٥ 
+25. Dan sampaikanlah berita gembira kepada mereka yang beriman dan berbuat baik, bahwa bagi mereka disediakan surga-surga yang mengalir sungai-sungai di dalamnya. Setiap mereka diberi rezki buah-buahan dalam surga-surga itu, mereka mengatakan : \"Inilah yang pernah diberikan kepada Kami dahulu.\" mereka diberi buah-buahan yang serupa dan untuk mereka di dalamnya ada isteri-isteri yang suci dan mereka kekal di dalamnya.
+
+-	Balasan buruk berupa neraka
+Neraka menjadi tempat terakhir bagi orang yang memiliki amal buruk , kafir, musyrik dan fasik ( Q.S Al Ahqaf ayat 20)
+وَيَوۡمَ يُعۡرَضُ ٱلَّذِينَ كَفَرُواْ عَلَى ٱلنَّارِ أَذۡهَبۡتُمۡ طَيِّبَٰتِكُمۡ فِي حَيَاتِكُمُ ٱلدُّنۡيَا وَٱسۡتَمۡتَعۡتُم بِهَا فَٱلۡيَوۡمَ تُجۡزَوۡنَ عَذَابَ ٱلۡهُونِ بِمَا كُنتُمۡ تَسۡتَكۡبِرُونَ فِي ٱلۡأَرۡضِ بِغَيۡرِ ٱلۡحَقِّ وَبِمَا كُنتُمۡ تَفۡسُقُونَ ٢٠ 
+20. Dan (ingatlah) hari (ketika) orang-orang kafir dihadapkan ke neraka (kepada mereka dikatakan): \"Kamu telah menghabiskan rezkimu yang baik dalam kehidupan duniawimu (saja) dan kamu telah bersenang-senang dengannya; Maka pada hari ini kamu dibalasi dengan azab yang menghinakan karena kamu telah menyombongkan diri di muka bumi tanpa hak dan karena kamu telah fasik\".
+
+Peneliti ingin memberikan gambaran yang lebih mudah bagi anak didik untuk meyakini, memahami bahwa setiap manusia mempunyai kewajiban untuk mengumpulkan bekal di kehidupan dunia untuk mendapatkan keselamatan di akhirat dengan game yang oleh peneliti dinamai “Game Shiratal Mustaqim”.
+
+-	Shiratal Mustaqim
+Shirath al mustaqim banyak dijumpai dalam Alqur’an bahkan kata ini hampir setiap nafas diucapkan umat muslim yakni pada kata “ihdinas shiratal mustaqim” yang jika diterjemahkan berarti tunjukkanlah kami ke jalan yang lurus.
+Dalam keyakinan umat Islam jembatan shiratal mustaqimadalah jalan panang diatas neraka dan jalan akhir dari jembatan ini adalah surgA. Terkait shiratal mustaqim Allah sudah menjelaskan dalam surat Maryam ayat 71-72.
+وَإِن مِّنكُمۡ إِلَّا وَارِدُهَاۚ كَانَ عَلَىٰ رَبِّكَ حَتۡمٗا مَّقۡضِيّٗا ٧١ ثُمَّ نُنَجِّي ٱلَّذِينَ ٱتَّقَواْ وَّنَذَرُ ٱلظَّٰلِمِينَ فِيهَا جِثِيّٗا ٧٢ 
+71. Dan tidak ada seorangpun dari padamu, melainkan mendatangi neraka itu. hal itu bagi Tuhanmu adalah suatu kemestian yang sudah ditetapkan. 
+72. Kemudian Kami akan menyelamatkan orang-orang yang bertakwa dan membiarkan orang-orang yang zalim di dalam neraka dalam Keadaan berlutut.
+
+Dalam riwayat dari Imam Ahmad Perjalanan manusia diatas shiratal mustaqim dengan bermacam-macam keadaan :
+1)	Ada yang melewatinya secapat kilat
+2)	Ada yang melewatinya berlari seperti angin
+3)	Ada yang melintasinya seperti kecepatan kuda
+4)	Ada golongan yang melintasinya dengan berlari biasa
+5)	Ada golongan yang melintasinya dengan berjalan 
+6)	Ada golongan yang melintasinya dengan merangkak
+7)	Ada golongan yang melintasinya dengan bergelantungan
+8)	Ada golongan yang langsung jatuh ke neraka.
+
+Bekal agar mudah melewati jembatan shiratal mustaqim :
+a)	Taubat (Q.S At Tahrim ayat 8)
+b)	Menegakkan shalat, jaminan memiliki cahaya yang cukup jika rajin menegakkan shalat sesuai dengan hadits Rasulullah yang diriwayatkan oleh Ibnu majah dan HR.Bukhori
+عَنْ اَبِى هُرَيْرَةَ قَالَ: سَمِعْتُ رَسُوْلَ اللهِ ص يَقُوْلُ: اِنَّ اَوَّلَ مَا يُحَاسَبُ بِهِ اْلعَبْدُ يَوْمَ اْلقِيَامَةِ الصَّلاَةُ اْلمَكْتُوْبَةُ فَاِنْ اَتَمَّهَا وَ اِلاَّ قِيْلَ. اُنْظُرُوْا، هَلْ لَهُ مِنْ تَطَوُّعٍ؟ فَاِنْ كَانَ لَهُ تَطَوُّعٌ اُكْمِلَتِ اْلفَرِيْضَةُ مِنْ تَطَوُّعِهِ، ثُمَّ يُفْعَلُ بِسَائِرِ اْلاَعْمَالِ اْلمَفْرُوْضَةِ مِثْلُ ذلِكَ. الخمسة، فى نيل الاوطار 
+
+Dari Abu Hurairah, ia berkata : Saya mendengar Rasulullah SAW bersabda, “Sesungguhnya pertama-tama perbuatan manusia yang dihisab pada hari qiyamat, adalah shalat wajib. Maka apabila ia telah menyempurnakannya (maka selesailah persoalannya). Tetapi apabila tidak sempurna shalatnya, dikatakan (kepada malaikat), “Lihatlah dulu, apakah ia pernah mengerjakan shalat sunnah ! Jika ia mengerjakan shalat sunnah, maka kekurangan dalam shalat wajib disempurnakan dengan shalat sunnahnya”. Kemudian semua amal-amal yang wajib diperlakukan seperti itu”. [HR. Khamsah, dalam Nailul Authar juz 1, hal. 345]
+
+Dari Jabir bin „Abdillah, Rasulullah shallallahu „alaihi wa sallam bersabda,
+بَيْنَ الرَّجُلِ وَبَيْنَ الشِّرْكِ وَالْكُفْرِ تَرْكُ الصَّلاَةِ
+“(Pembatas) antara seorang muslim dan kesyirikan serta kekafiran adalah meninggalkan shalat.” (HR. Muslim no. 257)
+
+c)	Melindungi sesama muslim dari kejahatan orang munafik ini disebutkan dalam sebuah hadits yang diriwiyatkan oleh HR. Abu Dawud
+d)	Ikhlas bersedekah
+e)	Membantu orang lain
+
+Adapun dalil yang dituangkan dalam game untuk memperkuat alur permainan diantaranya :
+1.	2  Kalimat Syahadat
+2.	Q.S An Najm ayat 39-42
+ وَأَن لَّيۡسَ لِلۡإِنسَٰنِ إِلَّا مَا سَعَىٰ ٣٩ وَأَنَّ سَعۡيَهُۥ سَوۡفَ يُرَىٰ ٤٠  ثُمَّ يُجۡزَىٰهُ ٱلۡجَزَآءَ ٱلۡأَوۡفَىٰ ٤١  وَأَنَّ إِلَىٰ رَبِّكَ ٱلۡمُنتَهَىٰ ٤٢ 
+39. Dan bahwasanya seorang manusia tiada memperoleh selain apa yang telah diusahakannya,
+40. Dan bahwasanya usaha itu kelak akan diperlihat (kepadanya).
+41. Kemudian akan diberi Balasan kepadanya dengan Balasan yang paling sempurna,
+42. Dan bahwasanya kepada Tuhamulah kesudahan (segala sesuatu)
+
+3.	Hadits Larangan Sombong 
+4.	Larangan Syirik
+Q.S An Nisa ayat 36
+۞وَٱعۡبُدُواْ ٱللَّهَ وَلَا تُشۡرِكُواْ بِهِۦ شَيۡٔٗاۖ وَبِٱلۡوَٰلِدَيۡنِ إِحۡسَٰنٗا وَبِذِي ٱلۡقُرۡبَىٰ وَٱلۡيَتَٰمَىٰ وَٱلۡمَسَٰكِينِ وَٱلۡجَارِ ذِي ٱلۡقُرۡبَىٰ وَٱلۡجَارِ ٱلۡجُنُبِ وَٱلصَّاحِبِ بِٱلۡجَنۢبِ وَٱبۡنِ ٱلسَّبِيلِ وَمَا مَلَكَتۡ أَيۡمَٰنُكُمۡۗ إِنَّ ٱللَّهَ لَا يُحِبُّ مَن كَانَ مُخۡتَالٗا فَخُورًا ٣٦ 
+36. Sembahlah Allah dan janganlah kamu mempersekutukan-Nya dengan sesuatupun. dan berbuat baiklah kepada dua orang ibu-bapa, karib-kerabat, anak-anak yatim, orang-orang miskin, tetangga yang dekat dan tetangga yang jauh, dan teman sejawat, Ibnu sabil dan hamba sahayamu. Sesungguhnya Allah tidak menyukai orang-orang yang sombong dan membangga-banggakan diri.
+
+5.	Kehidupan Dunia -Akhirat
+Q.S Al Hadid ayat 20
+ٱعۡلَمُوٓاْ أَنَّمَا ٱلۡحَيَوٰةُ ٱلدُّنۡيَا لَعِبٞ وَلَهۡوٞ وَزِينَةٞ وَتَفَاخُرُۢ بَيۡنَكُمۡ وَتَكَاثُرٞ فِي ٱلۡأَمۡوَٰلِ وَٱلۡأَوۡلَٰدِۖ كَمَثَلِ غَيۡثٍ أَعۡجَبَ ٱلۡكُفَّارَ نَبَاتُهُۥ ثُمَّ يَهِيجُ فَتَرَىٰهُ مُصۡفَرّٗا ثُمَّ يَكُونُ حُطَٰمٗاۖ وَفِي ٱلۡأٓخِرَةِ عَذَابٞ شَدِيدٞ وَمَغۡفِرَةٞ مِّنَ ٱللَّهِ وَرِضۡوَٰنٞۚ وَمَا ٱلۡحَيَوٰةُ ٱلدُّنۡيَآ إِلَّا مَتَٰعُ ٱلۡغُرُورِ ٢٠ 
+20. Ketahuilah, bahwa Sesungguhnya kehidupan dunia ini hanyalah permainan dan suatu yang melalaikan, perhiasan dan bermegah- megah antara kamu serta berbangga-banggaan tentang banyaknya harta dan anak, seperti hujan yang tanam-tanamannya mengagumkan Para petani; kemudian tanaman itu menjadi kering dan kamu Lihat warnanya kuning kemudian menjadi hancur. dan di akhirat (nanti) ada azab yang keras dan ampunan dari Allah serta keridhaan-Nya. dan kehidupan dunia ini tidak lain hanyalah kesenangan yang menipu.
+
+6.	Pentingnya Waktu
+Q.S Al ‘Asr ayat 1-3
+وَٱلۡعَصۡرِ ١  إِنَّ ٱلۡإِنسَٰنَ لَفِي خُسۡرٍ ٢  إِلَّا ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ وَتَوَاصَوۡاْ بِٱلۡحَقِّ وَتَوَاصَوۡاْ بِٱلصَّبۡرِ ٣ 
+1. Demi masa.
+2. Sesungguhnya manusia itu benar-benar dalam kerugian,
+3. Kecuali orang-orang yang beriman dan mengerjakan amal saleh dan nasehat menasehati supaya mentaati kebenaran dan nasehat menasehati supaya menetapi kesabaran.
+
+7.	Berlomba-lomba dalam Kebaikan
+Q.S Al Baqarah ayat 148
+وَلِكُلّٖ وِجۡهَةٌ هُوَ مُوَلِّيهَاۖ فَٱسۡتَبِقُواْ ٱلۡخَيۡرَٰتِۚ أَيۡنَ مَا تَكُونُواْ يَأۡتِ بِكُمُ ٱللَّهُ جَمِيعًاۚ إِنَّ ٱللَّهَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٞ ١٤٨ 
+148. Dan bagi tiap-tiap umat ada kiblatnya (sendiri) yang ia menghadap kepadanya. Maka berlomba-lombalah (dalam membuat) kebaikan. di mana saja kamu berada pasti Allah akan mengumpulkan kamu sekalian (pada hari kiamat). Sesungguhnya Allah Maha Kuasa atas segala sesuatu.
+"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Theme", "Visibility" ]
+
+

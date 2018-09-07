@@ -25,7 +25,6 @@ func change_stage(stage_path):
 	if is_changing: return
 
 	emit_signal("stage_exit")
-	SoundManager.play_sfx("sound_coin")
 	is_changing = true
 	get_tree().get_root().set_disable_input(true)
 	#fade to black

@@ -4,7 +4,6 @@ signal show_exit_confirmation
 var show_exit_confirmation
 
 func _ready():
-	get_tree().set_auto_accept_quit(false)
 	set_process(true)
 	connect("show_exit_confirmation", self, "_show_exit_confirmation")
 	pass
@@ -23,6 +22,7 @@ func _notification(what):
 
 func _show_exit_confirmation():
 	if !show_exit_confirmation:
+		SoundManager.play("SFX_ClickOn")
 		var scene = load(GameVars.PREFABS_EXIT_CONFIRMATION)
 		var node = scene.instance()
 		get_tree().get_current_scene().add_child(node)

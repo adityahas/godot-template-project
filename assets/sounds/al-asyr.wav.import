@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/al-asyr.wav-48617b8f2b18c999489ed6a2781ad610.sample"
+
+[deps]
+
+source_file="res://assets/sounds/al-asyr.wav"
+dest_files=[ "res://.import/al-asyr.wav-48617b8f2b18c999489ed6a2781ad610.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

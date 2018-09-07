@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hamdallah.wav-c740eed673417e2fe2f34badc8d706de.sample"
+
+[deps]
+
+source_file="res://assets/sounds/hamdallah.wav"
+dest_files=[ "res://.import/hamdallah.wav-c740eed673417e2fe2f34badc8d706de.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
