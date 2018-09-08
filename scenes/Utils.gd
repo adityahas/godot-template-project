@@ -9,7 +9,6 @@ func _ready():
 	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func get_main_node():
+	var root_node = get_tree().get_root()
+	return root_node.get_child(root_node.get_child_count()-1)

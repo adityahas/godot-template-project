@@ -68,7 +68,7 @@ tracks/1/keys = {
 "values": [ Vector2( 247, 116 ), Vector2( 247, 292 ), Vector2( 247, -417 ) ]
 }
 
-[node name="Setting" type="Control" index="0"]
+[node name="Setting" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
