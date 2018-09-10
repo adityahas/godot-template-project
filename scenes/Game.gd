@@ -17,7 +17,7 @@ func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST && get_node("TimerBackButtonAllowExit").get_time_left() > 0:
 		emit_signal("show_exit_confirmation")
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST && !StageManager.is_changing:
-		if StageManager.stage_current == GameVars.STAGE_MAIN_MENU:
+		if StageManager.stage_current == GameVars.STAGE_GAMEPLAY:
 			emit_signal("show_exit_confirmation")
 		elif StageManager.stage_current != GameVars.STAGE_SPLASH:
 			StageManager.change_stage(StageManager.stage_prev)

@@ -12,7 +12,7 @@ func _ready():
 
 func _process(delta):
 	if done_loading_data && anim_done && !StageManager.is_changing:
-		StageManager.change_stage(GameVars.STAGE_MAIN_MENU)
+		StageManager.change_stage(GameVars.STAGE_GAMEPLAY)
 	pass
 
 func load_data(data):
@@ -21,4 +21,7 @@ func load_data(data):
 
 func anim_end():
 	anim_done = true
+	pass
+
+func _on_exit():
 	pass
