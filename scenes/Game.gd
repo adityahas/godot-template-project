@@ -1,5 +1,7 @@
 extends Node
 
+signal pause_game
+signal resume_game
 signal show_exit_confirmation
 var show_exit_confirmation
 
@@ -22,6 +24,7 @@ func _notification(what):
 
 func _show_exit_confirmation():
 	if !show_exit_confirmation:
+		emit_signal("pause_game")
 		SoundManager.play("SFX_ClickOn")
 		var scene = load(GameVars.PREFABS_EXIT_CONFIRMATION)
 		var node = scene.instance()

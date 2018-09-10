@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=2]
 
-[ext_resource path="res://scenes/MainCharacter.gd" type="Script" id=1]
+[ext_resource path="res://scenes/gameplay/MainCharacter.gd" type="Script" id=1]
 [ext_resource path="res://assets/mc/swing_1.png" type="Texture" id=2]
 [ext_resource path="res://assets/mc/swing_2.png" type="Texture" id=3]
 [ext_resource path="res://assets/mc/swing_3.png" type="Texture" id=4]
@@ -39,6 +39,7 @@
 [ext_resource path="res://assets/mc/roll_05.png" type="Texture" id=37]
 [ext_resource path="res://assets/mc/roll_06.png" type="Texture" id=38]
 [ext_resource path="res://assets/mc/roll_07.png" type="Texture" id=39]
+
 
 [sub_resource type="SpriteFrames" id=1]
 
