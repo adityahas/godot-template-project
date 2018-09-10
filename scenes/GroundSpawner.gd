@@ -17,7 +17,7 @@ func spawn_and_move():
 func spawn_ground():
 	var new_ground = scn_ground.instance()
 	new_ground.position = position
-	new_ground.connect("exit_tree", self, "spawn_and_move")
+	new_ground.connect("tree_exited", self, "spawn_and_move")
 	get_node("Container").add_child(new_ground)
 	pass
 
