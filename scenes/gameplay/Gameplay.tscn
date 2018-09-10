@@ -17,7 +17,7 @@
 [ext_resource path="res://assets/btn_about_hover.png" type="Texture" id=15]
 [ext_resource path="res://assets/btn_about_disabled.png" type="Texture" id=16]
 
-[node name="MainMenu" type="Node" index="0"]
+[node name="MainMenu" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect", "Transform" ]

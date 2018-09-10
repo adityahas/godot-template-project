@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 func _on_ButtonYes_button_up():
 	SoundManager.play("SFX_ClickOn")

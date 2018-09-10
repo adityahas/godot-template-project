@@ -66,19 +66,13 @@ tracks/1/keys = {
 "values": [ Vector2( 337, 228 ), Vector2( 337, 292 ), Vector2( 337, -168 ) ]
 }
 
-[node name="ExitConfirmation" type="Control"]
+[node name="ExitConfirmation" type="CanvasLayer"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-rect_min_size = Vector2( 1024, 600 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect" ]
 
@@ -217,8 +211,6 @@ align = 1
 _sections_unfolded = [ "Theme" ]
 
 [connection signal="button_up" from="PopUpFrame/HBoxContainer/ButtonYes" to="." method="_on_ButtonYes_button_up"]
-
-[connection signal="pressed" from="PopUpFrame/HBoxContainer/ButtonYes" to="." method="_on_ButtonYes_pressed"]
 
 [connection signal="button_up" from="PopUpFrame/HBoxContainer/ButtonNo" to="." method="_on_ButtonNo_button_up"]
 
