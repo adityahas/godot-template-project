@@ -22,3 +22,7 @@ func _on_game_paused():
 
 func _on_game_resumed():
 	get_tree().paused = false
+
+func _on_BtnPlay_button_up():
+	Game.emit_signal("resume_game")
+	get_node("MainMenu/AnimationPlayer").play("exit")

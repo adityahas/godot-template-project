@@ -5,7 +5,7 @@ var enable_music = true
 var enable_sfx = true
 
 const STAGE_SPLASH = "res://scenes/splash/Splash.tscn"
-const STAGE_GAMEPLAY = "res://scenes/gameplay/Gameplay.tscn"
+const STAGE_GAMEPLAY = "res://scenes/gameplay/GamePlay.tscn"
 
 const SAVE_GAME_NAME_GENERAL = "MyGameBerhitung_general"
 const SAVE_GAME_NAME_SCOREBOARD = "MyGameBerhitung_scoreboard"
