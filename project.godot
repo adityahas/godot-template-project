@@ -11,7 +11,8 @@ config_version=3
 [application]
 
 config/name="Godot Template Project"
-run/main_scene="res://scenes/splash/Splash.tscn"
+run/main_scene="res://scenes/gameplay/GamePlay.tscn"
+run/low_processor_mode=true
 boot_splash/image="res://icon.png"
 boot_splash/fullsize=false
 config/icon="res://icon.png"
@@ -23,8 +24,11 @@ GameVars="*res://scenes/GameVars.gd"
 Utils="*res://scenes/Utils.gd"
 StageManager="*res://scenes/StageManager.tscn"
 Game="*res://scenes/Game.tscn"
-GameStages="*res://scenes/GameStages.gd"
 SoundManager="*res://scenes/SoundManager.tscn"
+
+[debug]
+
+settings/fps/force_fps=30
 
 [display]
 

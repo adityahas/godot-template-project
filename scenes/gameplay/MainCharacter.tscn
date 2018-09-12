@@ -1,16 +1,16 @@
 [gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://scenes/gameplay/MainCharacter.gd" type="Script" id=1]
-[ext_resource path="res://assets/mc/jump_01.png" type="Texture" id=2]
-[ext_resource path="res://assets/mc/jump_02.png" type="Texture" id=3]
-[ext_resource path="res://assets/mc/jump_03.png" type="Texture" id=4]
-[ext_resource path="res://assets/mc/jump_04.png" type="Texture" id=5]
-[ext_resource path="res://assets/mc/crawl_1.png" type="Texture" id=6]
-[ext_resource path="res://assets/mc/crawl_2.png" type="Texture" id=7]
-[ext_resource path="res://assets/mc/crawl_3.png" type="Texture" id=8]
-[ext_resource path="res://assets/mc/crawl_4.png" type="Texture" id=9]
-[ext_resource path="res://assets/mc/crawl_5.png" type="Texture" id=10]
-[ext_resource path="res://assets/mc/crawl_6.png" type="Texture" id=11]
+[ext_resource path="res://assets/mc/crawl_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/mc/crawl_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/mc/crawl_3.png" type="Texture" id=4]
+[ext_resource path="res://assets/mc/crawl_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/mc/crawl_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/mc/crawl_6.png" type="Texture" id=7]
+[ext_resource path="res://assets/mc/jump_01.png" type="Texture" id=8]
+[ext_resource path="res://assets/mc/jump_02.png" type="Texture" id=9]
+[ext_resource path="res://assets/mc/jump_03.png" type="Texture" id=10]
+[ext_resource path="res://assets/mc/jump_04.png" type="Texture" id=11]
 [ext_resource path="res://assets/mc/run_01.png" type="Texture" id=12]
 [ext_resource path="res://assets/mc/run_02.png" type="Texture" id=13]
 [ext_resource path="res://assets/mc/run_03.png" type="Texture" id=14]
@@ -26,31 +26,31 @@
 [ext_resource path="res://assets/mc/run_13.png" type="Texture" id=24]
 [ext_resource path="res://assets/mc/run_14.png" type="Texture" id=25]
 [ext_resource path="res://assets/mc/run_15.png" type="Texture" id=26]
-[ext_resource path="res://assets/mc/roll_01.png" type="Texture" id=27]
-[ext_resource path="res://assets/mc/roll_02.png" type="Texture" id=28]
-[ext_resource path="res://assets/mc/roll_03.png" type="Texture" id=29]
-[ext_resource path="res://assets/mc/roll_04.png" type="Texture" id=30]
-[ext_resource path="res://assets/mc/roll_05.png" type="Texture" id=31]
-[ext_resource path="res://assets/mc/roll_06.png" type="Texture" id=32]
-[ext_resource path="res://assets/mc/roll_07.png" type="Texture" id=33]
-[ext_resource path="res://assets/mc/swing_1.png" type="Texture" id=34]
-[ext_resource path="res://assets/mc/swing_2.png" type="Texture" id=35]
-[ext_resource path="res://assets/mc/swing_3.png" type="Texture" id=36]
-[ext_resource path="res://assets/mc/swing_4.png" type="Texture" id=37]
-[ext_resource path="res://assets/mc/swing_5.png" type="Texture" id=38]
-[ext_resource path="res://assets/mc/swing_6.png" type="Texture" id=39]
+[ext_resource path="res://assets/mc/swing_1.png" type="Texture" id=27]
+[ext_resource path="res://assets/mc/swing_2.png" type="Texture" id=28]
+[ext_resource path="res://assets/mc/swing_3.png" type="Texture" id=29]
+[ext_resource path="res://assets/mc/swing_4.png" type="Texture" id=30]
+[ext_resource path="res://assets/mc/swing_5.png" type="Texture" id=31]
+[ext_resource path="res://assets/mc/swing_6.png" type="Texture" id=32]
+[ext_resource path="res://assets/mc/roll_01.png" type="Texture" id=33]
+[ext_resource path="res://assets/mc/roll_02.png" type="Texture" id=34]
+[ext_resource path="res://assets/mc/roll_03.png" type="Texture" id=35]
+[ext_resource path="res://assets/mc/roll_04.png" type="Texture" id=36]
+[ext_resource path="res://assets/mc/roll_05.png" type="Texture" id=37]
+[ext_resource path="res://assets/mc/roll_06.png" type="Texture" id=38]
+[ext_resource path="res://assets/mc/roll_07.png" type="Texture" id=39]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "jump",
-"speed": 14.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "crawl",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "jump",
 "speed": 14.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
@@ -58,14 +58,14 @@ animations = [ {
 "name": "run",
 "speed": 14.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
-"loop": true,
-"name": "roll",
-"speed": 14.0
-}, {
-"frames": [ ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "swing",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "roll",
 "speed": 14.0
 } ]
 
@@ -102,7 +102,7 @@ _sections_unfolded = [ "Angular", "Linear" ]
 
 frames = SubResource( 1 )
 animation = "run"
-frame = 8
+frame = 11
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

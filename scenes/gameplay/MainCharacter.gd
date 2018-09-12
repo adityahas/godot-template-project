@@ -13,5 +13,5 @@ func jump():
 	pass
 	
 func _input(event):
-	if event.is_action_pressed("jump") && linear_velocity.y == 0:
+	if event.is_action_pressed("jump") && linear_velocity.y == 0 && (Game.game_state == "resumed" || Game.game_state == "started"):
 		jump()

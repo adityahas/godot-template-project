@@ -2,12 +2,18 @@ extends Node
 
 signal pause_game
 signal resume_game
+signal start_game
 signal show_exit_confirmation
 var show_exit_confirmation
+var game_state
+var game_score = 0
 
 func _ready():
 	set_process(true)
 	connect("show_exit_confirmation", self, "_show_exit_confirmation")
+	connect("pause_game", self, "_on_game_paused")
+	connect("resume_game", self, "_on_game_resumed")
+	connect("start_game", self, "_on_game_started")
 	pass
 
 func _process(delta):
@@ -30,3 +36,14 @@ func _show_exit_confirmation():
 		var node = scene.instance()
 		get_tree().get_current_scene().add_child(node)
 		show_exit_confirmation = true
+
+func _on_game_paused():
+	game_state = "paused"
+	get_tree().paused = true
+
+func _on_game_resumed():
+	game_state = "resumed"
+	get_tree().paused = false
+
+func _on_game_started():
+	game_state = "started"

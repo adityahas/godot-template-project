@@ -1,8 +1,11 @@
 extends Node
 
-############################### for global usage
-var enable_music = true
-var enable_sfx = true
+const SCREEN_WIDTH = 1024
+const SCREEN_HEIGHT = 600
+
+const GROUP_GROUNDS = "grounds"
+const GROUP_OBSTACLES = "obstacles"
+const GROUP_COINS = "coins"
 
 const STAGE_SPLASH = "res://scenes/splash/Splash.tscn"
 const STAGE_GAMEPLAY = "res://scenes/gameplay/GamePlay.tscn"

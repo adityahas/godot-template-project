@@ -49,7 +49,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Gameplay" type="Node"]
+[node name="Gameplay" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect", "Transform" ]
@@ -143,19 +143,17 @@ margin_right = 160.0
 margin_bottom = 160.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 7 )
 toggle_mode = false
-enabled_focus_mode = 2
+enabled_focus_mode = 0
 shortcut = null
 group = null
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
-_sections_unfolded = [ "Rect", "Textures", "Theme" ]
 
 [node name="BtnSetting" type="TextureButton" parent="MainMenu/Container" index="1"]
 
@@ -170,20 +168,19 @@ margin_bottom = 67.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
-enabled_focus_mode = 2
+enabled_focus_mode = 0
 shortcut = null
 group = null
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 12 )
 texture_disabled = ExtResource( 13 )
-_sections_unfolded = [ "Margin", "Rect", "Textures" ]
+_sections_unfolded = [ "Margin", "Mouse", "Rect", "Textures" ]
 
 [node name="BtnAbout" type="TextureButton" parent="MainMenu/Container" index="2"]
 
@@ -198,13 +195,12 @@ margin_bottom = 67.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
-enabled_focus_mode = 2
+enabled_focus_mode = 0
 shortcut = null
 group = null
 texture_normal = ExtResource( 14 )
