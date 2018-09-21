@@ -1,13 +1,43 @@
-[gd_scene format=2]
+[gd_scene load_steps=7 format=2]
 
-[node name="Obstacle" type="Area2D"]
+[ext_resource path="res://assets/obstacle/fire_01.png" type="Texture" id=1]
+[ext_resource path="res://assets/obstacle/fire_02.png" type="Texture" id=2]
+[ext_resource path="res://assets/obstacle/fire_03.png" type="Texture" id=3]
+[ext_resource path="res://assets/obstacle/fire_04.png" type="Texture" id=4]
 
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14.6266, 45.0411 )
+
+[node name="Obstacle" type="StaticBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "default"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0.339127, 3.7303 )
+shape = SubResource( 2 )
 
 

@@ -49,7 +49,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Gameplay" type="Node" index="0"]
+[node name="Gameplay" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect", "Transform" ]
@@ -59,7 +59,7 @@ _sections_unfolded = [ "Rect", "Transform" ]
 [node name="MainCharacter" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 198.088, 465.752 )
-_sections_unfolded = [ "Angular", "Linear", "Pause" ]
+_sections_unfolded = [ "Angular", "Applied Forces", "Linear", "Pause", "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 
@@ -75,7 +75,7 @@ limit_bottom = 10000000
 limit_smoothed = false
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
-smoothing_enabled = false
+smoothing_enabled = true
 smoothing_speed = 5.0
 offset_v = 0.0
 offset_h = 0.0
@@ -87,7 +87,7 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 4 )
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Smoothing", "Z Index" ]
 
 [node name="GroundSpawner" parent="." index="3" instance=ExtResource( 5 )]
 

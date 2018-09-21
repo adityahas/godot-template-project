@@ -7,6 +7,8 @@ signal show_exit_confirmation
 var show_exit_confirmation
 var game_state
 var game_score = 0
+var travel_distance = 0
+var walk_speed = 50
 
 func _ready():
 	set_process(true)
@@ -47,3 +49,6 @@ func _on_game_resumed():
 
 func _on_game_started():
 	game_state = "started"
+
+func game_is_running():
+	return (Game.game_state == "resumed" || Game.game_state == "started")
