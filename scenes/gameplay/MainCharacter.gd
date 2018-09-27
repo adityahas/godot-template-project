@@ -44,7 +44,6 @@ func _physics_process(delta):
 			get_node("AnimatedSprite").frames.set_animation_speed("run", get_node("AnimatedSprite").frames.get_animation_speed("run") + 1)	
 	
 func jump():
-	print("jump")
 	linear_vel.y = -JUMP_SPEED
 	is_rolling = false
 	get_node("AnimatedSprite").play("jump")
@@ -54,6 +53,7 @@ func roll():
 	is_rolling = true
 	get_node("AnimatedSprite").play("roll")
 	get_node("CollisionShape2D").scale.y = 0.7
+	linear_vel.y = JUMP_SPEED
 
 func run():
 	is_rolling = false
@@ -61,12 +61,13 @@ func run():
 	get_node("CollisionShape2D").scale.y = 1
 	
 func _input(event):
-	if event.is_action_pressed("jump"):
-		if jump_counter < MAX_JUMP:
-			jump()
-			jump_counter += 1
-	if is_on_floor() && Game.game_is_running():
+	if Game.game_is_running():
+		if event.is_action_pressed("jump"):
+			if jump_counter < MAX_JUMP:
+				jump()
+				jump_counter += 1
 		if event.is_action_pressed("roll"):
 			roll()
-		if event.is_action_released("roll"):
-			run()
+		if is_on_floor():
+			if event.is_action_released("roll"):
+				run()

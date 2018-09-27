@@ -50,7 +50,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Gameplay" type="Node"]
+[node name="Gameplay" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect", "Transform" ]
