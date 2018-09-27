@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/gameplay/GamePlay.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=2]
@@ -6,17 +6,18 @@
 [ext_resource path="res://scenes/gameplay/Camera2D.gd" type="Script" id=4]
 [ext_resource path="res://scenes/gameplay/GroundSpawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/gameplay/CoinSpawner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/sm_theme.tres" type="Theme" id=7]
-[ext_resource path="res://assets/btn_play.png" type="Texture" id=8]
-[ext_resource path="res://assets/btn_play_pressed.png" type="Texture" id=9]
-[ext_resource path="res://assets/btn_setting.png" type="Texture" id=10]
-[ext_resource path="res://assets/btn_setting_pressed.png" type="Texture" id=11]
-[ext_resource path="res://assets/btn_setting_hover.png" type="Texture" id=12]
-[ext_resource path="res://assets/btn_setting_disabled.png" type="Texture" id=13]
-[ext_resource path="res://assets/btn_about.png" type="Texture" id=14]
-[ext_resource path="res://assets/btn_about_pressed.png" type="Texture" id=15]
-[ext_resource path="res://assets/btn_about_hover.png" type="Texture" id=16]
-[ext_resource path="res://assets/btn_about_disabled.png" type="Texture" id=17]
+[ext_resource path="res://scenes/gameplay/ObstacleSpawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sm_theme.tres" type="Theme" id=8]
+[ext_resource path="res://assets/btn_play.png" type="Texture" id=9]
+[ext_resource path="res://assets/btn_play_pressed.png" type="Texture" id=10]
+[ext_resource path="res://assets/btn_setting.png" type="Texture" id=11]
+[ext_resource path="res://assets/btn_setting_pressed.png" type="Texture" id=12]
+[ext_resource path="res://assets/btn_setting_hover.png" type="Texture" id=13]
+[ext_resource path="res://assets/btn_setting_disabled.png" type="Texture" id=14]
+[ext_resource path="res://assets/btn_about.png" type="Texture" id=15]
+[ext_resource path="res://assets/btn_about_pressed.png" type="Texture" id=16]
+[ext_resource path="res://assets/btn_about_hover.png" type="Texture" id=17]
+[ext_resource path="res://assets/btn_about_disabled.png" type="Texture" id=18]
 
 [sub_resource type="Animation" id=1]
 
@@ -49,7 +50,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Gameplay" type="Node" index="0"]
+[node name="Gameplay" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect", "Transform" ]
@@ -96,7 +97,9 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="CoinSpawner" parent="." index="4" instance=ExtResource( 6 )]
 
-[node name="MainMenu" type="CanvasLayer" parent="." index="5"]
+[node name="ObstacleSpawner" parent="." index="5" instance=ExtResource( 7 )]
+
+[node name="MainMenu" type="CanvasLayer" parent="." index="6"]
 
 editor/display_folded = true
 layer = 1
@@ -149,13 +152,13 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 7 )
+theme = ExtResource( 8 )
 toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
 
 [node name="BtnSetting" type="TextureButton" parent="MainMenu/Container" index="1"]
 
@@ -178,10 +181,10 @@ toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 12 )
-texture_disabled = ExtResource( 13 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+texture_disabled = ExtResource( 14 )
 _sections_unfolded = [ "Margin", "Mouse", "Rect", "Textures" ]
 
 [node name="BtnAbout" type="TextureButton" parent="MainMenu/Container" index="2"]
@@ -205,10 +208,10 @@ toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 group = null
-texture_normal = ExtResource( 14 )
-texture_pressed = ExtResource( 15 )
-texture_hover = ExtResource( 16 )
-texture_disabled = ExtResource( 17 )
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 17 )
+texture_disabled = ExtResource( 18 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Textures" ]
 
 [connection signal="button_up" from="MainMenu/Container/BtnPlay" to="." method="_on_BtnPlay_button_up"]

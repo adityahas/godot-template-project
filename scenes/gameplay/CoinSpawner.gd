@@ -1,7 +1,8 @@
 extends Node2D
 
 const GROUND_HEIGHT = 110
-const COIN_WIDTH_OFFSET = -100
+const OBJ_WIDTH_OFFSET = -100
+const RAND_HEIGHT = 100
 var scn_coin = preload("res://scenes/gameplay/Coin.tscn")
 
 func _ready():
@@ -15,7 +16,7 @@ func init_spawner():
 	randomize()
 	var init_pos = Vector2()
 	init_pos.x = get_viewport_rect().size.x
-	init_pos.y = GameVars.SCREEN_HEIGHT - rand_range(GROUND_HEIGHT, GROUND_HEIGHT + 50)
+	init_pos.y = GameVars.SCREEN_HEIGHT - rand_range(GROUND_HEIGHT, GROUND_HEIGHT + RAND_HEIGHT)
 	
 	var camera = Utils.get_main_node().get_node("Camera2D")
 	if camera:
@@ -24,10 +25,10 @@ func init_spawner():
 	position = init_pos
 
 func spawn_and_move():
-	spawn_coin()
+	spawn()
 	move_to_next_position()
 
-func spawn_coin():
+func spawn():
 	var new_coin = scn_coin.instance()
 	new_coin.position = position
 	new_coin.connect("tree_exited", self, "spawn_and_move")
@@ -36,7 +37,6 @@ func spawn_coin():
 func move_to_next_position():
 	randomize()
 	var next_pos = position
-	var camera = Utils.get_main_node().get_node("Camera2D")
-	next_pos.x += GameVars.SCREEN_WIDTH + COIN_WIDTH_OFFSET
-	next_pos.y = GameVars.SCREEN_HEIGHT - rand_range(GROUND_HEIGHT, GROUND_HEIGHT + 50)
+	next_pos.x += GameVars.SCREEN_WIDTH + OBJ_WIDTH_OFFSET
+	next_pos.y = GameVars.SCREEN_HEIGHT - rand_range(GROUND_HEIGHT, GROUND_HEIGHT + RAND_HEIGHT)
 	position = next_pos

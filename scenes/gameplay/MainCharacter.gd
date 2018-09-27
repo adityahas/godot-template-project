@@ -8,11 +8,14 @@ const JUMP_SPEED = 480
 
 var timer = 0.0
 var linear_vel = Vector2()
+var is_rolling = false
+
+var jump_counter = 0
+const MAX_JUMP = 2
 
 func _ready():
 	set_process_input(true)
 	set_process(true)
-#	linear_velocity.x = Game.walk_speed
 	pass
 	
 func _physics_process(delta):
@@ -29,8 +32,9 @@ func _physics_process(delta):
 		# Move and Slide
 		linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
 		
-		if linear_vel.y == 0:
+		if is_on_floor() && !is_rolling:
 			get_node("AnimatedSprite").play("run")
+			jump_counter = 0
 		
 		timer += delta
 		if timer > 4:
@@ -38,14 +42,31 @@ func _physics_process(delta):
 			Game.walk_speed += 30
 			# Set run animation FPS
 			get_node("AnimatedSprite").frames.set_animation_speed("run", get_node("AnimatedSprite").frames.get_animation_speed("run") + 1)	
-	pass
 	
 func jump():
+	print("jump")
 	linear_vel.y = -JUMP_SPEED
+	is_rolling = false
 	get_node("AnimatedSprite").play("jump")
-	pass
+	get_node("CollisionShape2D").scale.y = 1
+
+func roll():
+	is_rolling = true
+	get_node("AnimatedSprite").play("roll")
+	get_node("CollisionShape2D").scale.y = 0.7
+
+func run():
+	is_rolling = false
+	get_node("AnimatedSprite").play("run")
+	get_node("CollisionShape2D").scale.y = 1
 	
 func _input(event):
-	if event.is_action_pressed("jump") && is_on_floor() && Game.game_is_running():
-		jump()
-	pass
+	if event.is_action_pressed("jump"):
+		if jump_counter < MAX_JUMP:
+			jump()
+			jump_counter += 1
+	if is_on_floor() && Game.game_is_running():
+		if event.is_action_pressed("roll"):
+			roll()
+		if event.is_action_released("roll"):
+			run()
